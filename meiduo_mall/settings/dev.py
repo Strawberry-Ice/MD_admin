@@ -329,7 +329,6 @@ CORS_ORIGIN_WHITELIST = [
     'http://api.meiduo.site:8000'
 ]
 
-
 # 允许携带cookie值
 CORS_ALLOW_CREDENTIALS = True
 
@@ -337,7 +336,7 @@ CORS_ALLOW_CREDENTIALS = True
 #     "POST"
 # ]
 
-CORS_ORIGIN_ALLOW_ALL = True
+# CORS_ORIGIN_ALLOW_ALL = True
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
@@ -350,7 +349,7 @@ REST_FRAMEWORK = {
 # datetime.datetime(year=2019, month=7, day=9, hour=11, minute=43, second=56) # 时间点对象
 # datetime.timedelta(days=10) 对像，代表十天（时间段）
 JWT_AUTH = {
-    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=10),  # token有效期为100天
-    # 'JWT_RESPONSE_PAYLOAD_HANDLER': 'meiduo_admin.jwt_response_handler.custome_jwt_response_payload_hander',
+    'JWT_EXPIRATION_DELTA': datetime.timedelta(days=100),  # token有效期为100天
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'meiduo_admin.jwt_response_handler.customer_jwt_response_payload_handler',
     # 自定义函数构建最终jwt返回的结果：添加username和user_id
 }

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from meiduio_admin.serializers.login_serializer import *
+from meiduo_admin.serializers.login_serializer import *
 
 
 class LoginView(APIView):
