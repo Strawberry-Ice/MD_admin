@@ -29,4 +29,5 @@ urlpatterns = [
     url('^', include('carts.urls')),
     url('^', include('orders.urls')),
     url('^', include('payments.urls')),
+    url('^meiduo_admin/', include('meiduio_admin.urls')),
 ]
