@@ -2,6 +2,9 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from django.utils import timezone
+import pytz
+from datetime import timedelta
+from django.conf import settings
 
 from meiduo_admin.utils import obtain_zero_shanghai
 from users.models import User
@@ -91,3 +94,33 @@ class HomeViewSet(ViewSet):
             'count': count,
             'date': date_zero_shanghai
         })
+
+    # 获取月增长用户
+    # GET
+    # tatistical/month_increment/
+    @action(methods=['get'], detail=False)
+    def month_increment(self, request):
+        # 获取最近30天中每一天的用户注册数量
+        # 1.构建开始时间点
+        # 1.1 当前时间
+        cur_date = timezone.now().astimezone(pytz.timezone(settings.TIME_ZONE))
+
+        # 1.2 开始时间
+        start_date = cur_date - timedelta(days=29)
+
+        # 2.遍历数据
+        date_list = []
+        for index in range(30):
+            # 每遍历一次,获得一个当日时间,然后天数加一
+            clac_date = (start_date + timedelta(days=index)).replace(hour=0, minute=0, second=0)
+
+            # 过滤用户
+            count = User.objects.filter(date_joined__gte=clac_date, date_joined__lt=(clac_date+timedelta(days=1))).count()
+
+            #构建数据
+            date_list.append({
+                'count': count,
+                'date': clac_date.date()
+            })
+
+        return Response(date_list)
