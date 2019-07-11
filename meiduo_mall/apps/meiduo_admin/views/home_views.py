@@ -1,14 +1,16 @@
-from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework.decorators import action
+from rest_framework.viewsets import ViewSet
 from django.utils import timezone
-import pytz
-from datetime import timedelta
 from django.conf import settings
+from datetime import timedelta
+import pytz
 
+from meiduo_admin.serializers.home_serializer import GoodsDaySerializer
 from meiduo_admin.utils import obtain_zero_shanghai
-from users.models import User
+from goods.models import GoodsVisitCount
 from orders.models import OrderInfo
+from users.models import User
 
 
 class HomeViewSet(ViewSet):
@@ -78,9 +80,9 @@ class HomeViewSet(ViewSet):
         # 2.1.2 根据订单,统计出用户
         # user_list = []
         # for order in order_queryset:
-            # if order.user not in user_list:
-            #     user_list.append(order.user)
-            # user_list.append(order.user)
+        # if order.user not in user_list:
+        #     user_list.append(order.user)
+        # user_list.append(order.user)
 
         # 2.1.3 用户去重
         # count = len(user_list)
@@ -115,12 +117,30 @@ class HomeViewSet(ViewSet):
             clac_date = (start_date + timedelta(days=index)).replace(hour=0, minute=0, second=0)
 
             # 过滤用户
-            count = User.objects.filter(date_joined__gte=clac_date, date_joined__lt=(clac_date+timedelta(days=1))).count()
+            count = User.objects.filter(date_joined__gte=clac_date,
+                                        date_joined__lt=(clac_date + timedelta(days=1))).count()
 
-            #构建数据
+            # 构建数据
             date_list.append({
                 'count': count,
                 'date': clac_date.date()
             })
 
         return Response(date_list)
+
+    # 获取日分类商品访问量
+    # GET
+    # statistical/goods_day_views/
+    @action(methods=['get'], detail=False)
+    def goods_day_views(self, request):
+        # 1.获取当日零时
+        data_zero_shanghai = obtain_zero_shanghai()
+
+        # 2.获得序列化说就
+        gv = GoodsVisitCount.objects.filter(create_time__gte=data_zero_shanghai)
+
+        # 3.调用序列化器完成数据序列化
+        gvs = GoodsDaySerializer(instance=gv, many=True)
+
+        # 4.响应
+        return Response(gvs.data)
