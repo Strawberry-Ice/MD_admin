@@ -1,3 +1,4 @@
+from rest_framework.permissions import IsAdminUser
 from rest_framework.response import Response
 from rest_framework.decorators import action
 from rest_framework.viewsets import ViewSet
@@ -15,6 +16,8 @@ from users.models import User
 
 class HomeViewSet(ViewSet):
 
+    # 设置只有管理员用户才能调用以下接口
+    permission_classes = [IsAdminUser]
     # 获取用户总数
     # GET
     # statistical/total_count/
