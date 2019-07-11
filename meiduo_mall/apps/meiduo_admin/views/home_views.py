@@ -39,3 +39,20 @@ class HomeViewSet(ViewSet):
             'count': count,
             'date': date_zero_shanghai
         })
+
+    # 日常活跃用户
+    # GET
+    # statistical/day_active/
+    @action(methods=['get'], detail=False)
+    def day_active(self, request):
+        # 1.获取当日零时
+        date_zero_shanghai = obtain_zero_shanghai()
+
+        # 2.过滤用户
+        count = User.objects.filter(last_login__gte=date_zero_shanghai).count()
+
+        # 3.统计数据,构建数据返回
+        return Response({
+            'count': count,
+            'date': date_zero_shanghai
+        })
