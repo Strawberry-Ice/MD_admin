@@ -1,6 +1,6 @@
 from rest_framework.generics import ListAPIView, ListCreateAPIView
 from meiduo_admin.serializers.user_manage_serializer import UserSerializer, UserAddSerializer
-from meiduo_admin.utils import UserPageNum
+from meiduo_admin.utils import PageNum
 from users.models import User
 
 
@@ -8,8 +8,8 @@ class UserView(ListCreateAPIView):
     # 指定序列化器
     serializer_class = UserSerializer
 
-    # 指定分液器
-    pagination_class = UserPageNum
+    # 指定分页器
+    pagination_class = PageNum
 
     # 根据不同的请求方式返回不同序列化器
     def get_serializer_class(self):

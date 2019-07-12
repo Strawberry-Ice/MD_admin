@@ -19,7 +19,7 @@ def obtain_zero_shanghai():
 
 
 # 分页器
-class UserPageNum(PageNumberPagination):
+class PageNum(PageNumberPagination):
     page_size = 5  # 每页显示数量
     page_size_query_param = 'pagesize'
     max_page_size = 10  # 最大页数
