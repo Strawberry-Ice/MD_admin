@@ -44166,3 +44166,36 @@ INFO 2019-07-12 20:18:33,546 basehttp 124 "POST /meiduo_admin/users/ HTTP/1.1" 2
 INFO 2019-07-12 20:18:33,612 basehttp 124 "OPTIONS /meiduo_admin/users/?page=1&pagesize=10&keyword=zhangsan HTTP/1.1" 200 0
 INFO 2019-07-12 20:18:33,695 basehttp 124 "GET /meiduo_admin/users/?page=1&pagesize=10&keyword=zhangsan HTTP/1.1" 200 125
 INFO 2019-07-12 20:18:39,726 basehttp 124 "GET /meiduo_admin/users/?page=1&pagesize=10&keyword= HTTP/1.1" 200 536
+INFO 2019-07-12 20:27:35,832 basehttp 124 "OPTIONS /meiduo_admin/goods/?page=1&pagesize=10 HTTP/1.1" 200 0
+WARNING 2019-07-12 20:27:35,964 base 152 Not Found: /meiduo_admin/goods/
+WARNING 2019-07-12 20:27:35,966 basehttp 124 "GET /meiduo_admin/goods/?page=1&pagesize=10 HTTP/1.1" 404 10019
+INFO 2019-07-12 20:27:36,593 basehttp 124 "OPTIONS /meiduo_admin/skus/categories/ HTTP/1.1" 200 0
+INFO 2019-07-12 20:27:36,611 basehttp 124 "OPTIONS /meiduo_admin/goods/simple/ HTTP/1.1" 200 0
+INFO 2019-07-12 20:27:36,621 basehttp 124 "OPTIONS /meiduo_admin/skus/categories/ HTTP/1.1" 200 0
+INFO 2019-07-12 20:27:36,638 basehttp 124 "OPTIONS /meiduo_admin/skus/?page=1&pagesize=10&keyword= HTTP/1.1" 200 0
+INFO 2019-07-12 20:27:36,639 basehttp 124 "OPTIONS /meiduo_admin/goods/simple/ HTTP/1.1" 200 0
+WARNING 2019-07-12 20:27:36,671 base 152 Not Found: /meiduo_admin/skus/categories/
+WARNING 2019-07-12 20:27:36,675 base 152 Not Found: /meiduo_admin/goods/simple/
+WARNING 2019-07-12 20:27:36,682 basehttp 124 "GET /meiduo_admin/skus/categories/ HTTP/1.1" 404 10026
+WARNING 2019-07-12 20:27:36,685 basehttp 124 "GET /meiduo_admin/goods/simple/ HTTP/1.1" 404 10017
+WARNING 2019-07-12 20:27:36,728 base 152 Not Found: /meiduo_admin/skus/categories/
+WARNING 2019-07-12 20:27:36,736 basehttp 124 "GET /meiduo_admin/skus/categories/ HTTP/1.1" 404 10026
+WARNING 2019-07-12 20:27:36,747 base 152 Not Found: /meiduo_admin/goods/simple/
+WARNING 2019-07-12 20:27:36,748 basehttp 124 "GET /meiduo_admin/goods/simple/ HTTP/1.1" 404 10017
+INFO 2019-07-12 20:27:36,979 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesize=10&keyword= HTTP/1.1" 200 6663
+WARNING 2019-07-12 20:27:39,683 base 152 Not Found: /meiduo_admin/goods/
+WARNING 2019-07-12 20:27:39,685 basehttp 124 "GET /meiduo_admin/goods/?page=1&pagesize=10 HTTP/1.1" 404 10019
+WARNING 2019-07-12 20:27:40,483 base 152 Not Found: /meiduo_admin/skus/categories/
+WARNING 2019-07-12 20:27:40,493 base 152 Not Found: /meiduo_admin/goods/simple/
+WARNING 2019-07-12 20:27:40,495 basehttp 124 "GET /meiduo_admin/skus/categories/ HTTP/1.1" 404 10026
+WARNING 2019-07-12 20:27:40,514 basehttp 124 "GET /meiduo_admin/goods/simple/ HTTP/1.1" 404 10017
+WARNING 2019-07-12 20:27:40,531 base 152 Not Found: /meiduo_admin/skus/categories/
+WARNING 2019-07-12 20:27:40,547 base 152 Not Found: /meiduo_admin/goods/simple/
+WARNING 2019-07-12 20:27:40,549 basehttp 124 "GET /meiduo_admin/skus/categories/ HTTP/1.1" 404 10026
+WARNING 2019-07-12 20:27:40,566 basehttp 124 "GET /meiduo_admin/goods/simple/ HTTP/1.1" 404 10017
+INFO 2019-07-12 20:27:40,754 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesize=10&keyword= HTTP/1.1" 200 6663
+INFO 2019-07-12 20:27:49,412 basehttp 124 "OPTIONS /meiduo_admin/skus/?page=1&pagesize=10&keyword=A HTTP/1.1" 200 0
+INFO 2019-07-12 20:27:49,443 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesize=10&keyword=A HTTP/1.1" 200 54
+INFO 2019-07-12 20:28:31,971 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesize=10&keyword=A HTTP/1.1" 200 6663
+INFO 2019-07-12 20:28:43,055 basehttp 124 "OPTIONS /meiduo_admin/skus/?page=1&pagesize=10&keyword=%E5%8D%A1 HTTP/1.1" 200 0
+INFO 2019-07-12 20:28:43,155 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesize=10&keyword=%E5%8D%A1 HTTP/1.1" 200 5351

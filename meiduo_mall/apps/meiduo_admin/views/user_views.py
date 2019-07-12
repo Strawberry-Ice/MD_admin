@@ -1,7 +1,11 @@
-from meiduo_admin.serializers.user_serializer import *
 from rest_framework.generics import ListAPIView, ListCreateAPIView
+from rest_framework.viewsets import ModelViewSet
 from meiduo_admin.utils import PageNum
+
+from meiduo_admin.serializers.sku_serializer import SKUGoodsSerializer
+from meiduo_admin.serializers.user_serializer import *
 from users.models import User
+from goods.models import SKU
 
 
 class UserView(ListCreateAPIView):
@@ -27,3 +31,20 @@ class UserView(ListCreateAPIView):
             return User.objects.all()
         else:
             return User.objects.filter(username__contains=keyword)
+
+
+class SKUGoodsView(ModelViewSet):
+    # 指定序列化器
+    serializer_class = SKUGoodsSerializer
+    # 指定分页器 进行分页返回
+    pagination_class = PageNum
+
+    # 重写get_queryset方法，判断是否传递keyword查询参数
+    def get_queryset(self):
+        # 提取keyword
+        keyword = self.request.query_params.get('keyword')
+
+        if keyword == '' or keyword is None:
+            return SKU.objects.all()
+        else:
+            return SKU.objects.filter(name__contains=keyword)

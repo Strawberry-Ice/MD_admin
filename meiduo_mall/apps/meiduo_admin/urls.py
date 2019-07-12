@@ -13,6 +13,8 @@ urlpatterns = [
 
     url(r'^users/$', UserView.as_view()),
 
+    url(r'^skus/$', SKUGoodsView.as_view({"get": "list"})),
+
 ]
 
 router = SimpleRouter()
