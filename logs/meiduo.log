@@ -44159,3 +44159,10 @@ INFO 2019-07-12 20:13:24,788 basehttp 124 "GET /meiduo_admin/users/?page=1&pages
 INFO 2019-07-12 20:13:29,052 basehttp 124 "OPTIONS /meiduo_admin/users/?page=1&pagesize=10&keyword=a HTTP/1.1" 200 0
 INFO 2019-07-12 20:13:29,095 basehttp 124 "GET /meiduo_admin/users/?page=1&pagesize=10&keyword=a HTTP/1.1" 200 240
 INFO 2019-07-12 20:13:34,420 basehttp 124 "GET /meiduo_admin/users/?page=1&pagesize=10&keyword= HTTP/1.1" 200 464
+INFO 2019-07-12 20:17:09,144 basehttp 124 "OPTIONS /meiduo_admin/users/ HTTP/1.1" 200 0
+WARNING 2019-07-12 20:17:09,181 basehttp 124 "POST /meiduo_admin/users/ HTTP/1.1" 405 46
+WARNING 2019-07-12 20:17:16,000 basehttp 124 "POST /meiduo_admin/users/ HTTP/1.1" 405 46
+INFO 2019-07-12 20:18:33,546 basehttp 124 "POST /meiduo_admin/users/ HTTP/1.1" 201 71
+INFO 2019-07-12 20:18:33,612 basehttp 124 "OPTIONS /meiduo_admin/users/?page=1&pagesize=10&keyword=zhangsan HTTP/1.1" 200 0
+INFO 2019-07-12 20:18:33,695 basehttp 124 "GET /meiduo_admin/users/?page=1&pagesize=10&keyword=zhangsan HTTP/1.1" 200 125
+INFO 2019-07-12 20:18:39,726 basehttp 124 "GET /meiduo_admin/users/?page=1&pagesize=10&keyword= HTTP/1.1" 200 536
