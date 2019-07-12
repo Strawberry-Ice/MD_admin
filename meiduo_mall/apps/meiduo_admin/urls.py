@@ -15,6 +15,10 @@ urlpatterns = [
     url(r'^users/$', UserView.as_view()),
 
     url(r'^skus/$', SKUGoodsView.as_view({"get":"list", "post":"create"})),
+    # 获得三级分类信息
+    url(r'^skus/categories/$', SKUGoodsView.as_view({"get":"categories"})),
+    # 获得SPU信息
+    url(r'^goods/simple/$', SKUGoodsView.as_view({"get":"simple"})),
 
 
 ]
