@@ -6,6 +6,7 @@ from meiduo_admin.views.login_views import LoginView
 from meiduo_admin.views.home_views import *
 from meiduo_admin.views.user_views import *
 from meiduo_admin.views.spu_views import *
+from meiduo_admin.views.sku_views import *
 
 urlpatterns = [
     # url(r'^authorizations/$', LoginView.as_view()),
@@ -22,13 +23,20 @@ urlpatterns = [
 
     url(r'^goods/(?P<pk>\d+)/specs/$', SPUSpecView.as_view()),
 
-    url(r'^goods/$', SPUGoodsView.as_view({"get": "list"})),
-
     url(r'^skus/(?P<pk>\d+)/$', SKUGoodsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
+
+    url(r'^goods/$', SPUGoodsViewSet.as_view({"get": "list"})),
+
+    url(r'^goods/brands/simple/$', SPUGoodsViewSet.as_view({"get": "simple"})),
+
+    url(r'^goods/channel/categories/$', SPUGoodsViewSet.as_view({"get": "categories"})),
+
+    url(r'^goods/channel/categories/(?P<pk>\d+)/$', SPUGoodsViewSet.as_view({"get": "channel"})),
 
 ]
 
 router = SimpleRouter()
 router.register(prefix='statistical', viewset=HomeViewSet, base_name='home')
+# router.register(prefix='goods', viewset=SPUGoodsViewSet, base_name='spu')
 
 urlpatterns += router.urls

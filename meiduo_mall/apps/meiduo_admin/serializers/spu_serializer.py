@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from goods.models import SPU
+from goods.models import SPU, Brand, GoodsCategory
 
 
 class SPUGoodsSerializer(serializers.ModelSerializer):
@@ -13,3 +13,19 @@ class SPUGoodsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SPU
         exclude = ('category1', 'category2', 'category3')
+
+
+class SPUBrandSerializer(serializers.ModelSerializer):
+    """SPU表品牌序列化器"""
+
+    class Meta:
+        model = Brand
+        fields = "__all__"
+
+
+class CategorySerializer(serializers.ModelSerializer):
+    """SPU表分类信息获取序列化器"""
+
+    class Meta:
+        model = GoodsCategory
+        fields = "__all__"
