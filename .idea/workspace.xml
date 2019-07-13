@@ -63,8 +63,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="160">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -76,7 +76,7 @@
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/user_views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
-              <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+              <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
               <folding>
                 <element signature="e#217#662#0" />
                 <element signature="e#358#567#0" />
@@ -95,8 +95,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.6/site-packages/rest_framework/viewsets.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="219" column="33" lean-forward="true" selection-start-line="219" selection-start-column="33" selection-end-line="219" selection-end-column="33" />
+            <state relative-caret-position="544">
+              <caret line="220" column="31" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -104,8 +104,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.6/site-packages/rest_framework/mixins.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="54" column="16" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="16" />
+            <state relative-caret-position="286">
+              <caret line="64" column="14" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -113,10 +113,22 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/sku_serializer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1355">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
+            <state relative-caret-position="190">
+              <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#155#439#0" />
+                <element signature="e#67#99#2" />
+                <element signature="e#224#319#0" />
+                <element signature="e#542#1031#0" />
+                <element signature="e#940#1031#0" />
+                <element signature="e#1054#1151#0" />
+                <element signature="e#1103#1151#0" />
+                <element signature="e#1237#1339#0" />
+                <element signature="e#1294#1347#0" />
+                <element signature="e#1446#1554#0" />
+                <element signature="e#1497#1555#0" />
+                <element signature="e#1623#2004#0" />
+                <element signature="e#1856#1940#0" />
               </folding>
             </state>
           </provider>
@@ -317,7 +329,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16836000" />
+    <option name="totallyTimeSpent" value="17102000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -338,8 +350,8 @@
       <window_info anchor="bottom" id="Database Console" order="0" weight="0.3287037" />
       <window_info anchor="bottom" id="Docker" order="1" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.5659722" />
-      <window_info anchor="bottom" id="Terminal" order="4" weight="0.6076389" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.5659722" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="4" visible="true" weight="0.6076389" />
       <window_info anchor="bottom" id="Version Control" order="5" weight="0.3298611" />
       <window_info anchor="bottom" id="Python Console" order="6" show_stripe_button="false" weight="0.3298611" />
       <window_info anchor="bottom" id="TODO" order="7" side_tool="true" weight="0.3298611" />
@@ -786,10 +798,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/serializers/sku_serializer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1355">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="190">
+          <caret line="38" column="58" selection-start-line="38" selection-start-column="58" selection-end-line="38" selection-end-column="58" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#155#439#0" />
+            <element signature="e#67#99#2" />
+            <element signature="e#224#319#0" />
+            <element signature="e#542#1031#0" />
+            <element signature="e#940#1031#0" />
+            <element signature="e#1054#1151#0" />
+            <element signature="e#1103#1151#0" />
+            <element signature="e#1237#1339#0" />
+            <element signature="e#1294#1347#0" />
+            <element signature="e#1446#1554#0" />
+            <element signature="e#1497#1555#0" />
+            <element signature="e#1623#2004#0" />
+            <element signature="e#1856#1940#0" />
           </folding>
         </state>
       </provider>
@@ -797,7 +821,7 @@
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/views/user_views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
           <folding>
             <element signature="e#217#662#0" />
             <element signature="e#358#567#0" />
@@ -814,22 +838,22 @@
     </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.6/site-packages/rest_framework/viewsets.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="219" column="33" lean-forward="true" selection-start-line="219" selection-start-column="33" selection-end-line="219" selection-end-column="33" />
+        <state relative-caret-position="544">
+          <caret line="220" column="31" selection-start-line="220" selection-start-column="31" selection-end-line="220" selection-end-column="31" />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/meiduo_mall/lib/python3.6/site-packages/rest_framework/mixins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="54" column="16" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="16" />
+        <state relative-caret-position="286">
+          <caret line="64" column="14" selection-start-line="64" selection-start-column="8" selection-end-line="64" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/meiduo_mall/apps/meiduo_admin/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="160">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>

@@ -44322,3 +44322,7 @@ INFO 2019-07-13 10:34:56,941 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesi
 INFO 2019-07-13 10:35:00,112 basehttp 124 "GET /meiduo_admin/skus/?page=2&pagesize=10&keyword= HTTP/1.1" 200 4779
 INFO 2019-07-13 10:35:02,537 basehttp 124 "GET /meiduo_admin/goods/3/specs/ HTTP/1.1" 200 526
 INFO 2019-07-13 10:35:02,649 basehttp 124 "GET /meiduo_admin/skus/17/ HTTP/1.1" 200 374
+INFO 2019-07-13 10:36:52,198 basehttp 124 "OPTIONS /meiduo_admin/skus/18/ HTTP/1.1" 200 0
+INFO 2019-07-13 10:36:52,362 basehttp 124 "DELETE /meiduo_admin/skus/18/ HTTP/1.1" 204 0
+INFO 2019-07-13 10:36:52,513 basehttp 124 "GET /meiduo_admin/skus/?page=1&pagesize=10&keyword= HTTP/1.1" 200 6663
+INFO 2019-07-13 10:36:55,518 basehttp 124 "GET /meiduo_admin/skus/?page=2&pagesize=10&keyword= HTTP/1.1" 200 4404
