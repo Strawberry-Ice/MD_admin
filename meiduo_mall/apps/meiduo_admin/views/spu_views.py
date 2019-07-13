@@ -5,7 +5,7 @@ from rest_framework.decorators import action
 
 from meiduo_admin.serializers.spu_serializer import *
 from meiduo_admin.utils import PageNum
-from goods.models import SPU, Brand, GoodsCategory
+from goods.models import SPU, Brand, GoodsCategory, SKU
 
 
 class SPUGoodsViewSet(ModelViewSet):
@@ -26,7 +26,11 @@ class SPUGoodsViewSet(ModelViewSet):
         if self.action == "channel":
             return GoodsCategory.objects.filter(parent=self.kwargs['pk'])
 
-        return SPU.objects.all()
+        keyword = self.request.query_params.get('keyword')
+        if keyword == '' or keyword is None:
+            return SPU.objects.all()
+        else:
+            return SPU.objects.filter(name=keyword)
 
     def get_serializer_class(self):
         if self.action == "simple":

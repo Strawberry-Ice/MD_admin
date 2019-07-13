@@ -14,7 +14,7 @@ urlpatterns = [
     url(r'^authorizations/$', obtain_jwt_token),
 
     url(r'^users/$', UserView.as_view()),
-
+    # SKU表管理
     url(r'^skus/$', SKUGoodsView.as_view({"get": "list", "post": "create"})),
 
     url(r'^skus/categories/$', SKUCategorieView.as_view()),
@@ -24,14 +24,16 @@ urlpatterns = [
     url(r'^goods/(?P<pk>\d+)/specs/$', SPUSpecView.as_view()),
 
     url(r'^skus/(?P<pk>\d+)/$', SKUGoodsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
-
-    url(r'^goods/$', SPUGoodsViewSet.as_view({"get": "list"})),
+    # SPU表管理
+    url(r'^goods/$', SPUGoodsViewSet.as_view({"get": "list", "post": "create"})),
 
     url(r'^goods/brands/simple/$', SPUGoodsViewSet.as_view({"get": "simple"})),
 
     url(r'^goods/channel/categories/$', SPUGoodsViewSet.as_view({"get": "categories"})),
 
     url(r'^goods/channel/categories/(?P<pk>\d+)/$', SPUGoodsViewSet.as_view({"get": "channel"})),
+
+    url(r'^goods/(?P<pk>\d+)/$', SPUGoodsViewSet.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
 
 ]
 
