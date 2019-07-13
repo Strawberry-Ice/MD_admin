@@ -21,6 +21,8 @@ urlpatterns = [
 
     url(r'^goods/(?P<pk>\d+)/specs/$', SPUSpecView.as_view()),
 
+    url(r'^skus/(?P<pk>\d+)/$', SKUGoodsView.as_view({"get": "retrieve", "put": "update"})),
+
 ]
 
 router = SimpleRouter()

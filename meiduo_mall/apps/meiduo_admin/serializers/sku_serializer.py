@@ -17,9 +17,7 @@ class SKUSpecificationSerialzier(serializers.ModelSerializer):
 
 
 class SKUGoodsSerializer(serializers.ModelSerializer):
-    """
-        获取sku表信息的序列化器
-    """
+    """获取sku表信息的序列化器"""
     # 指定所关联的选项信息 关联嵌套返回
 
     specs = SKUSpecificationSerialzier(read_only=True, many=True)
@@ -37,10 +35,9 @@ class SKUGoodsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+
 class SKUCategorieSerializer(serializers.ModelSerializer):
-    """
-        商品分类序列化器
-    """
+    """商品分类序列化器"""
 
     class Meta:
         model = GoodsCategory
@@ -48,9 +45,7 @@ class SKUCategorieSerializer(serializers.ModelSerializer):
 
 
 class SPUSimpleSerializer(serializers.ModelSerializer):
-    """
-        商品SPU表序列化器
-    """
+    """商品SPU表序列化器"""
 
     class Meta:
         model = GoodsCategory
@@ -58,9 +53,7 @@ class SPUSimpleSerializer(serializers.ModelSerializer):
 
 
 class SPUOptineSerializer(serializers.ModelSerializer):
-    """
-        规格选项序列化器
-    """
+    """规格选项序列化器"""
 
     class Meta:
         model = SpecificationOption
@@ -68,9 +61,7 @@ class SPUOptineSerializer(serializers.ModelSerializer):
 
 
 class SPUSpecSerialzier(serializers.ModelSerializer):
-    """
-        规格序列化器
-    """
+    """规格序列化器"""
     # 关联序列化返回SPU表数据
     spu = serializers.StringRelatedField(read_only=True)
     spu_id = serializers.IntegerField(read_only=True)
