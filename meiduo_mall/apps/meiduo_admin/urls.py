@@ -15,6 +15,12 @@ urlpatterns = [
 
     url(r'^skus/$', SKUGoodsView.as_view({"get": "list"})),
 
+    url(r'^skus/categories/$', SKUCategorieView.as_view()),
+
+    url(r'^goods/simple/$', SPUSimpleView.as_view()),
+
+    url(r'^goods/(?P<pk>\d+)/specs/$', SPUSpecView.as_view()),
+
 ]
 
 router = SimpleRouter()

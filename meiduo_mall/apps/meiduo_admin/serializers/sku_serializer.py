@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from goods.models import SKUSpecification, SKU
+from goods.models import SKUSpecification, SKU, GoodsCategory, SpecificationOption, SPUSpecification
 
 
 class SKUSpecificationSerialzier(serializers.ModelSerializer):
@@ -35,3 +35,48 @@ class SKUGoodsSerializer(serializers.ModelSerializer):
     class Meta:
         model = SKU  # SKU表中category外键关联了GoodsCategory分类表。spu外键关联了SPU商品表
         fields = '__all__'
+
+
+class SKUCategorieSerializer(serializers.ModelSerializer):
+    """
+        商品分类序列化器
+    """
+
+    class Meta:
+        model = GoodsCategory
+        fields = "__all__"
+
+
+class SPUSimpleSerializer(serializers.ModelSerializer):
+    """
+        商品SPU表序列化器
+    """
+
+    class Meta:
+        model = GoodsCategory
+        fields = ('id', 'name')
+
+
+class SPUOptineSerializer(serializers.ModelSerializer):
+    """
+        规格选项序列化器
+    """
+
+    class Meta:
+        model = SpecificationOption
+        fields = ('id', 'value')
+
+
+class SPUSpecSerialzier(serializers.ModelSerializer):
+    """
+        规格序列化器
+    """
+    # 关联序列化返回SPU表数据
+    spu = serializers.StringRelatedField(read_only=True)
+    spu_id = serializers.IntegerField(read_only=True)
+    # 关联序列化返回 规格选项信息
+    options = SPUOptineSerializer(read_only=True, many=True)  # 使用规格选项序列化器
+
+    class Meta:
+        model = SPUSpecification  # SPUSpecification中的外键spu关联了SPU商品表
+        fields = "__all__"
