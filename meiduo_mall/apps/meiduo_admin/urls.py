@@ -13,7 +13,7 @@ urlpatterns = [
 
     url(r'^users/$', UserView.as_view()),
 
-    url(r'^skus/$', SKUGoodsView.as_view({"get": "list"})),
+    url(r'^skus/$', SKUGoodsView.as_view({"get": "list", "post": "create"})),
 
     url(r'^skus/categories/$', SKUCategorieView.as_view()),
 
