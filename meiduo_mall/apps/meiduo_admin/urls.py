@@ -5,6 +5,7 @@ from rest_framework.routers import SimpleRouter
 from meiduo_admin.views.login_views import LoginView
 from meiduo_admin.views.home_views import *
 from meiduo_admin.views.user_views import *
+from meiduo_admin.views.spu_views import *
 
 urlpatterns = [
     # url(r'^authorizations/$', LoginView.as_view()),
@@ -20,6 +21,8 @@ urlpatterns = [
     url(r'^goods/simple/$', SPUSimpleView.as_view()),
 
     url(r'^goods/(?P<pk>\d+)/specs/$', SPUSpecView.as_view()),
+
+    url(r'^goods/$', SPUGoodsView.as_view({"get": "list"})),
 
     url(r'^skus/(?P<pk>\d+)/$', SKUGoodsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
 
