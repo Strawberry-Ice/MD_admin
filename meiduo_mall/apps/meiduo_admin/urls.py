@@ -9,6 +9,7 @@ from meiduo_admin.views.spu_views import *
 from meiduo_admin.views.sku_views import *
 from meiduo_admin.views.spec_views import *
 from meiduo_admin.views.option_views import *
+from meiduo_admin.views.image_views import *
 
 urlpatterns = [
     # url(r'^authorizations/$', LoginView.as_view()),
@@ -46,6 +47,12 @@ urlpatterns = [
     url(r'^goods/specs/simple/$', OptionSimpleView.as_view()),
 
     url(r'^specs/options/(?P<pk>\d+)/$', OptionsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
+
+    url(r'^skus/images/$', ImageView.as_view({"get": "list", "post": "create"})),
+
+    url(r'^skus/simple/$', ImageView.as_view({"get": "simple"})),
+
+    url(r'^skus/images/(?P<pk>\d+)/$', ImageView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
 
 ]
 
