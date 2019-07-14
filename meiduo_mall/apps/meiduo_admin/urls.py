@@ -45,6 +45,8 @@ urlpatterns = [
 
     url(r'^goods/specs/simple/$', OptionSimpleView.as_view()),
 
+    url(r'^specs/options/(?P<pk>\d+)/$', OptionsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
+
 ]
 
 router = SimpleRouter()
