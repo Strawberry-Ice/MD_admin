@@ -41,7 +41,9 @@ urlpatterns = [
 
     url(r'^goods/specs/(?P<pk>\d+)/$', SpecsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
 
-    url(r'^specs/options/$', OptionsView.as_view({"get": "list"})),
+    url(r'^specs/options/$', OptionsView.as_view({"get": "list", "post": "create"})),
+
+    url(r'^goods/specs/simple/$', OptionSimpleView.as_view()),
 
 ]
 
