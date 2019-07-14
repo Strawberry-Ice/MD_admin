@@ -35,6 +35,8 @@ urlpatterns = [
 
     url(r'^goods/(?P<pk>\d+)/$', SPUGoodsViewSet.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
 
+    url(r'^goods/specs/$', SPUGoodsViewSet.as_view({"get": "list", "put": "update", "delete": "destroy"})),
+
 ]
 
 router = SimpleRouter()
