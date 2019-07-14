@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from goods.models import SPUSpecification
+from goods.models import SPUSpecification, SpecificationOption
 
 
 class SKUSpecSerializer(serializers.ModelSerializer):
@@ -9,8 +9,9 @@ class SKUSpecSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SPUSpecification
-        fields = ['id',
-                  'name',
-                  'spu',
-                  'spu_id'
-                  ]
+        fields = [
+            'id',
+            'name',
+            'spu',
+            'spu_id'
+        ]
