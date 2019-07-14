@@ -38,6 +38,9 @@ class ImageView(ModelViewSet):
         sku_id = request.data.get('sku')[0]
         # 保存图片
         img = SKUImage.objects.create(sku_id=sku_id, image=image_url)
+
+        # 更新商品默认显示的图片
+        SKU.objects.filter(id=sku_id).update(default_image=image_url)
         # 返回结果
         return Response(
             {
@@ -69,6 +72,8 @@ class ImageView(ModelViewSet):
         # 更新图片
         img.image = image_url
         img.save()
+        # 更新商品默认显示的图片
+        SKU.objects.filter(id=sku_id).update(default_image=image_url)
         # 返回结果
         return Response(
             {

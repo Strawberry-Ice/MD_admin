@@ -3,7 +3,7 @@ import json
 from django.shortcuts import render
 from django.views import View
 from meiduo_mall.utils.categories import get_categories
-from .models import GoodsCategory, SKU, GoodsVisitCount
+from .models import GoodsCategory, SKU, GoodsVisitCount, SKUImage
 from django.core.paginator import Paginator
 from . import constants
 from django import http
@@ -12,6 +12,7 @@ from meiduo_mall.utils.breadcrumb import get_breadcrumb
 from django_redis import get_redis_connection
 from datetime import date
 from django.utils import timezone
+
 
 class ListView(View):
     def get(self, request, category_id, page_num):
