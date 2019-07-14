@@ -9,4 +9,8 @@ class SKUSpecSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SPUSpecification
-        fields = '__all__'
+        fields = ['id',
+                  'name',
+                  'spu',
+                  'spu_id'
+                  ]
