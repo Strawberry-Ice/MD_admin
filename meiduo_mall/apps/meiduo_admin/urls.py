@@ -38,6 +38,8 @@ urlpatterns = [
 
     url(r'^goods/specs/$', SpecsView.as_view({"get": "list", "post": "create"})),
 
+    url(r'^goods/specs/(?P<pk>\d+)/$', SpecsView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
+
 ]
 
 router = SimpleRouter()
