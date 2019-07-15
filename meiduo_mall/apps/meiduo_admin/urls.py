@@ -81,6 +81,8 @@ urlpatterns = [
 
     url(r'^orders/(?P<pk>\d+)/$', OrdersView.as_view({"get": "retrieve"})),
 
+    url(r'^orders/(?P<pk>\d+)/status/$', OrdersView.as_view({"patch": "status"})),
+
 ]
 router = SimpleRouter()
 router.register(prefix='statistical', viewset=HomeViewSet, base_name='home')
