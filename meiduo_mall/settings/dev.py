@@ -355,4 +355,7 @@ JWT_AUTH = {
 }
 
 
-FASTDFS_PATH = '/home/python/Desktop/meiduo_mall/meiduo_admin/meiduo_mall/utils/fdfs/client.conf'
+# FASTDFS_PATH = '/home/python/Desktop/meiduo_mall/meiduo_admin/meiduo_mall/utils/fdfs/client.conf'
+
+FASTDFS_PATH = os.path.join(BASE_DIR, 'utils/fdfs/client.conf')
+
