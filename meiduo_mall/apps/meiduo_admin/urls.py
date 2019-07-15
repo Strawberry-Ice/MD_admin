@@ -79,6 +79,8 @@ urlpatterns = [
     # 订单表
     url(r'^orders/$', OrdersView.as_view({"get": "list"})),
 
+    url(r'^orders/(?P<pk>\d+)/$', OrdersView.as_view({"get": "retrieve"})),
+
 ]
 router = SimpleRouter()
 router.register(prefix='statistical', viewset=HomeViewSet, base_name='home')
