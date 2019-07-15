@@ -12,6 +12,7 @@ from meiduo_admin.views.image_views import *
 from meiduo_admin.views.order_views import *
 from meiduo_admin.views.channels_views import *
 from meiduo_admin.views.bands_views import *
+from meiduo_admin.views.permission_views import *
 
 
 urlpatterns = [
@@ -83,6 +84,8 @@ urlpatterns = [
 
     url(r'^orders/(?P<pk>\d+)/status/$', OrdersView.as_view({"patch": "status"})),
 
+    # 权限表
+    url(r'^permission/perms/$', PermissionViewSet.as_view({"get": "list"})),
 ]
 router = SimpleRouter()
 router.register(prefix='statistical', viewset=HomeViewSet, base_name='home')
