@@ -11,6 +11,7 @@ from meiduo_admin.views.spec_views import *
 from meiduo_admin.views.option_views import *
 from meiduo_admin.views.image_views import *
 from meiduo_admin.views.order_views import *
+from meiduo_admin.views.channels_views import *
 
 urlpatterns = [
     # url(r'^authorizations/$', LoginView.as_view()),
@@ -54,6 +55,8 @@ urlpatterns = [
     url(r'^skus/simple/$', ImageView.as_view({"get": "simple"})),
 
     url(r'^skus/images/(?P<pk>\d+)/$', ImageView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
+
+    url(r'^goods/channels/$', ChannelsViewSet.as_view({"get": "list"})),
 
     url(r'^orders/$', OrdersView.as_view({"get": "list"})),
 
