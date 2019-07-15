@@ -57,6 +57,6 @@ class BandSerializer(serializers.ModelSerializer):
 
         instance.logo = logo
 
-        instance.save()
+        instance=super().update(instance, validated_data)
         # 5.响应
         return instance

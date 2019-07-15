@@ -42,7 +42,7 @@ class ImageSerializer(serializers.ModelSerializer):
 
         # 1.2 获得fdfs链接对象
         # conn = Fdfs_client('./meiduo_mall/client.conf')
-        conn = Fdfs_client(settings.FDFS_CONFPATH)
+        conn = Fdfs_client(settings.FASTDFS_PATH)
         # 1.3 根据文件数据上传
         res = conn.upload_by_buffer(content)  # 传入数据也是字节对象
         if res['Status'] != 'Upload successed.':
@@ -51,7 +51,9 @@ class ImageSerializer(serializers.ModelSerializer):
 
         instance.image = res['Remote file_id']
         instance.save()
-
+        print(instance)
+        # 更新商品默认显示的图片
+        SKU.objects.filter(id=instance.id).update(default_image=instance.image)
         return instance
 
 
