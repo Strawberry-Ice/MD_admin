@@ -2,7 +2,6 @@ from django.conf.urls import url
 from rest_framework_jwt.views import obtain_jwt_token
 from rest_framework.routers import SimpleRouter
 
-from meiduo_admin.views.login_views import LoginView
 from meiduo_admin.views.home_views import *
 from meiduo_admin.views.user_views import *
 from meiduo_admin.views.spu_views import *
@@ -12,6 +11,7 @@ from meiduo_admin.views.option_views import *
 from meiduo_admin.views.image_views import *
 from meiduo_admin.views.order_views import *
 from meiduo_admin.views.channels_views import *
+from meiduo_admin.views.bands_views import *
 
 
 urlpatterns = [
@@ -89,6 +89,9 @@ urlpatterns = [
     url(r'^goods/channel_types/$', ChannelsSimplView.as_view()),
 
     url(r'^goods/categories/$', GoodsCategoryView.as_view()),
+
+    # 品牌表
+    url(r'^goods/brands/$', BandViewSet.as_view({"get": "list"})),
 
     # 订单表
     url(r'^orders/$', OrdersView.as_view({"get": "list"})),
