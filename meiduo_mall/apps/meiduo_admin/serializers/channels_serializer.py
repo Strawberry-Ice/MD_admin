@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from goods.models import GoodsChannel
+from goods.models import GoodsChannel, GoodsChannelGroup, GoodsCategory
 
 
 class ChannelsSerializer(serializers.ModelSerializer):
@@ -19,4 +19,22 @@ class ChannelsSerializer(serializers.ModelSerializer):
             'group_id',
             'sequence',
             'url'
+        ]
+
+
+class ChannelsSimpleSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GoodsChannelGroup
+        fields = [
+            'id',
+            'name'
+        ]
+
+
+class GoodsCategorySerializer(serializers.ModelSerializer):
+    class Meta:
+        model = GoodsCategory
+        fields = [
+            'id',
+            'name'
         ]

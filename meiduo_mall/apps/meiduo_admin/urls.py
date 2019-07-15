@@ -56,7 +56,11 @@ urlpatterns = [
 
     url(r'^skus/images/(?P<pk>\d+)/$', ImageView.as_view({"get": "retrieve", "put": "update", "delete": "destroy"})),
 
-    url(r'^goods/channels/$', ChannelsViewSet.as_view({"get": "list"})),
+    url(r'^goods/channels/$', ChannelsViewSet.as_view({"get": "list", "post": "create"})),
+
+    url(r'^goods/channel_types/$', ChannelsSimplView.as_view()),
+
+    url(r'^goods/categories/$', GoodsCategoryView.as_view()),
 
     url(r'^orders/$', OrdersView.as_view({"get": "list"})),
 
