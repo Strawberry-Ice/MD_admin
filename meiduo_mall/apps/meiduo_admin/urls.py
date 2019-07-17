@@ -85,10 +85,12 @@ urlpatterns = [
     url(r'^orders/(?P<pk>\d+)/status/$', OrdersView.as_view({"patch": "status"})),
 
     # 权限表
-    url(r'^permission/perms/$', PermissionViewSet.as_view({"get": "list"})),
+    # url(r'^permission/perms/$', PermissionViewSet.as_view({"get": "list"})),
+
+     url(r'^permission/content_types/$', ContentTypeView.as_view()),
 ]
 router = SimpleRouter()
 router.register(prefix='statistical', viewset=HomeViewSet, base_name='home')
-# router.register(prefix='goods', viewset=SPUGoodsViewSet, base_name='spu')
+router.register(prefix='permission/perms', viewset=PermissionViewSet, base_name='perm')
 
 urlpatterns += router.urls
