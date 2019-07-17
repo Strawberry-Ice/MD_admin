@@ -13,6 +13,7 @@ from meiduo_admin.views.order_views import *
 from meiduo_admin.views.channels_views import *
 from meiduo_admin.views.bands_views import *
 from meiduo_admin.views.permission_views import *
+from meiduo_admin.views.group_views import *
 
 
 urlpatterns = [
@@ -88,9 +89,12 @@ urlpatterns = [
     # url(r'^permission/perms/$', PermissionViewSet.as_view({"get": "list"})),
 
      url(r'^permission/content_types/$', ContentTypeView.as_view()),
+
+     url(r'^permission/simple/$', GroupSimpleView.as_view()),
 ]
 router = SimpleRouter()
 router.register(prefix='statistical', viewset=HomeViewSet, base_name='home')
 router.register(prefix='permission/perms', viewset=PermissionViewSet, base_name='perm')
+router.register(prefix='permission/groups', viewset=GroupViewSet, base_name='group')
 
 urlpatterns += router.urls
