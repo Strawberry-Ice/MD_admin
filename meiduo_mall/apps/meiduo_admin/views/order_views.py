@@ -7,10 +7,17 @@ from meiduo_admin.utils import PageNum
 from orders.models import OrderInfo
 
 
-class OrdersView(ModelViewSet):
+class OrdersViewSet(ModelViewSet):
     serializer_class = OrderSeriazlier
     queryset = OrderInfo.objects.all()
     pagination_class = PageNum
+
+    def get_queryset(self):
+        keyword = self.request.query_params.get('keyword')
+        if keyword == '' or keyword is None:
+            return OrderInfo.objects.all()
+        else:
+            return OrderInfo.objects.filter(order_id__contains=keyword)
 
     @action(methods=['patch'], detail=True)
     def status(self, request, pk):

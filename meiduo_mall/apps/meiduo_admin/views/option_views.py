@@ -7,7 +7,7 @@ from goods.models import SpecificationOption, SPUSpecification
 from meiduo_admin.utils import PageNum
 
 
-class OptionsView(ModelViewSet):
+class OptionsViewSet(ModelViewSet):
     serializer_class = OptionSerializer
     queryset = SpecificationOption.objects.all()
     pagination_class = PageNum

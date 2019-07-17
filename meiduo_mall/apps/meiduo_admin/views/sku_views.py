@@ -6,7 +6,7 @@ from meiduo_admin.serializers.sku_serializer import *
 from goods.models import SKU, SPU, SPUSpecification
 
 
-class SKUGoodsView(ModelViewSet):
+class SKUGoodsViewSet(ModelViewSet):
     # 指定序列化器
     serializer_class = SKUGoodsSerializer
     # 指定分页器 进行分页返回

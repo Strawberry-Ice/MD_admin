@@ -8,7 +8,7 @@ from meiduo_admin.utils import PageNum
 from goods.models import SKUImage, SKU
 
 
-class ImageView(ModelViewSet):
+class ImageViewSet(ModelViewSet):
     serializer_class = ImageSerializer
     queryset = SKUImage.objects.all()
     pagination_class = PageNum
